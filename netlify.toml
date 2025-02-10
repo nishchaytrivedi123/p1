@@ -1,5 +1,10 @@
 [build]
-  command = "pip install --upgrade pip && pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
+command = "pip install --upgrade pip && pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
 
-  [build.environment]
-  PYTHON_VERSION = "3.8"  # Specify the Python version you want to use
+[build.environment]
+PYTHON_VERSION = "3.8"  # Specify the Python version you want to use
+
+[[redirects]]
+from = "/static/*"
+to = "/static/:splat"
+status = 200
