@@ -26,7 +26,7 @@ SECRET_KEY = 'dznqjj89q^z_n4s#&(x$-k-6z^lym!2_snik#g#@85&20#ag_r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['emnishwedding.netlify.app']
+ALLOWED_HOSTS = ["emnishwedding.netlify.app"]
 
 
 # Application definition
