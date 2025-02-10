@@ -1,2 +1,2 @@
  [build] 
- command = "python manage.py collectstatic
+ command = "python manage.py collectstatic"
