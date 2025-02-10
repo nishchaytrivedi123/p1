@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+      type="image/png"
+      href="{% static 'p1/photos/Logo - 3.png' %}">
+    <title>
+    	Emily & Nishchay
+    </title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+    <script type="text/javascript">
+        // Function to trigger the download of the Excel file
+        function downloadExcel() {
+            // Redirect to the URL that generates the Excel file
+            window.location.href = "{% url 'generate_excel' %}";
+        }
+    </script>
+</head>
+<body>
+    <h1>RSVPed and will make it</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Dietary restrictions</th>
+                <th>Family</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guest in rsvped_coming_guests %}
+                <tr>
+                    <td>{{ guest.first_name }} {{ guest.last_name }}</td>
+                    <td>{{ guest.dietary_restrictions }}</td>
+                    <td>{{ guest.family.family_name }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No active records found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- <ul>
+        {% for guest in rsvped_coming_guests %}
+            <li>{{ guest.first_name }} {{ guest.last_name }}</li>
+        {% empty %}
+            <li>No active records found.</li>
+        {% endfor %}
+    </ul> -->
+
+    <h1>RSVPed and will not make it</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Dietary restrictions</th>
+                <th>Family</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guest in rsvped_not_coming_guests %}
+                <tr>
+                    <td>{{ guest.first_name }} {{ guest.last_name }}</td>
+                    <td>{{ guest.dietary_restrictions }}</td>
+                    <td>{{ guest.family.family_name }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No active records found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Did not RSVP yet</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Dietary restrictions</th>
+                <th>Family</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guest in non_rsvped_guests %}
+                <tr>
+                    <td>{{ guest.first_name }} {{ guest.last_name }}</td>
+                    <td>{{ guest.dietary_restrictions }}</td>
+                    <td>{{ guest.family.family_name }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No active records found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="downloadExcel()">Download Records</button>
+</body>
+</html>

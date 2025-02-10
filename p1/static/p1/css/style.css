@@ -1,0 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+.center {
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	transform: translate(-50%, -50%);
+}
+.center_1 {
+	position: relative;
+  animation: fadeIn 5s;
+}
+
+.center_1 h1 {
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'Brush Script MT', cursive;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.title{
+	top: 38%;
+	padding-left: 7px;
+}
+
+#exTab2 > h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+.nav-item{
+	color: #FFFFFF !important;
+}
+
+.nav-link.active{
+	color: #FFFFFF !important;
+}
+
+.navbar.active .nav-item {
+  border: none !important;
+}
+
+nav.navbar {
+  position: absolute; /* Position it over the image */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make navbar full width */
+  background: transparent;
+  z-index: 10; /* Ensure it stays on top of other elements */
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+  color: #fff !important; /* White color for text */
+  font-weight: bold; /* Bold text */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* White hamburger icon */
+}
+
+/* Make sure the navbar stays responsive */
+@media (max-width: 767px) {
+
+  nav.navbar.active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .nav-item{
+    color: black !important;
+  }
+
+  .nav-link.active{
+    color: black !important;
+  }
+
+  .ms-auto {
+    color: black !important;
+  }
+
+  .ms-auto .nav-item {
+    padding-left: 0;
+  }
+}
+
+.ms-auto {
+  white-space: nowrap;
+}
+
+.text-overlay {
+  position: absolute; /* Position text on top of the image */
+  color: white; /* Text color for contrast */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+  font-family: Arial, sans-serif;
+  animation: fadeIn 5s;
+}
+
+/* Styling for Text Rows */
+.text-line {
+  margin: 5px 0; /* Adjust spacing between rows */
+
+}
+
+.text-overlay h1 {
+  font-size: 4.5rem;
+  font-family: 'Alex Brush', cursive; /* Use a clean font */
+}
+
+.image-container {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent scrolling */
+  display: flex;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%; /* Scale to fit width */
+  max-height: 100%; /* Scale to fit height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Countdown Container */
+#countdown-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin: 0; /* Remove outer margins */
+  background: #dfeeea; /* Light eucalyptus green */
+  padding: 20px; /* Padding inside the container */
+  max-width: 100%; /* Ensure container does not overflow */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Countdown Text */
+#countdown-text {
+  flex: 1; /* Allow text to take available space */
+  margin: 0 20px; /* Space between text and timer */
+  color: #5e8574; /* Dark eucalyptus green */
+  font-family: 'Alex Brush', cursive; /* Elegant font for wedding theme */
+  padding: 10px;
+  text-align: center; /* Center text */
+  max-width: 100%; /* Prevent overflow */
+}
+
+/* Styling for the main heading ("MISSING DAYS TO") */
+#countdown-text #title {
+  font-family: 'Arial', sans-serif; /* Standard sans-serif font */
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 10px 0; /* Add spacing below the heading */
+  color: #2f5543; /* A deeper eucalyptus green for contrast */
+}
+
+/* Styling for the subheading ("our wedding") */
+#countdown-text #wedding {
+  font-size: 2em;
+  margin: 0;
+  color: #5e8574; /* Dark eucalyptus green */
+  font-family: 'Alex Brush', cursive; /* Harmonize with the theme */
+}
+
+#champagne {
+  align-content: center;
+  color: #5e8574;
+}
+
+/* Countdown Timer */
+#timer {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center align */
+  text-align: center; /* Center the timer text */
+  max-width: 100%; /* Prevent overflow */
+}
+
+/* Countdown Blocks */
+#countdown {
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap; /* Allow blocks to wrap for smaller screens */
+  justify-content: center; /* Center align */
+  gap: 10px; /* Add space between blocks */
+}
+
+.time-block {
+  text-align: center;
+  margin: 0 50px;; /* Add consistent spacing */
+  flex: 1 1 100px; /* Allow blocks to shrink or grow, min-width 100px */
+}
+
+/* Timer Numbers */
+#timer span {
+  display: block;
+  font-size: 2.5em;
+  color: #5e8574; /* Dark eucalyptus green */
+  font-family: 'Alex Brush', cursive; /* Elegant font for the numbers */
+}
+
+/* Labels Under Timer */
+.label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #5e8574; /* Match dark eucalyptus green */
+  margin-top: 5px;
+  font-family: 'Arial', sans-serif; /* Standard sans-serif font for clarity */
+}
+
+/* Media Query for Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  #countdown-container {
+    flex-direction: column; /* Stack text and timer vertically */
+    padding: 15px;
+  }
+
+  #countdown-text {
+    margin: 0 0 20px 0; /* Add spacing below text */
+  }
+
+  #timer {
+    flex-wrap: wrap; /* Ensure blocks wrap properly */
+  }
+
+  .time-block {
+    margin: 0 40px;
+    flex: 1 1 80px; /* Smaller blocks for tablets */
+  }
+
+  #timer span {
+    font-size: 2em; /* Adjust number size */
+  }
+
+  .label {
+    font-size: 0.9em; /* Adjust label size */
+  }
+
+  .text-overlay h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Media Query for Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  #countdown-text #title {
+    font-size: 1.2em; /* Adjust title size */
+  }
+
+  #countdown-text #wedding {
+    font-size: 1.5em; /* Adjust subheading size */
+  }
+
+  .time-block {
+    margin: 0 30px;
+    flex: 1 1 60px; /* Smaller blocks for phones */
+  }
+
+  #timer span {
+    font-size: 1.8em; /* Adjust number size */
+  }
+
+  .label {
+    font-size: 0.8em; /* Adjust label size */
+  }
+
+  .text-overlay h1 {
+    font-size: 2rem;
+  }
+}
+
+
+/* Style for existing content */
+.existing-content {
+  padding: 10px;
+  text-align: center;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #dfeeea; /* Light eucalyptus green */
+}
+
+/* Add Google Fonts */
+
+.timeline {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-type: y mandatory;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  scroll-snap-align: start;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Image Block */
+.timeline-image {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: rgba(94, 133, 116, 0.2); /* Transparent eucalyptus green */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.overlay a:hover {
+  background-color: rgba(94, 133, 116, 0.5); /* Slightly less transparent on hover */
+  color: #fff;
+}
+
+.timeline-image:hover .overlay {
+  opacity: 1;
+}
+
+/* Description Block */
+.timeline-content {
+  flex: 1;
+  height: 100%;
+  background-color: #5e8574; /* Dark eucalyptus green */
+  color: #fff; /* White text for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.timeline-content h2 {
+  margin: 0;
+  font-size: 48px; /* Larger size for the title */
+  color: #ffffff; /* White for high contrast */
+  font-family: 'Alex Brush', cursive; /* Elegant font for event header */
+  font-weight: 700;
+}
+
+.timeline-content p {
+  margin: 20px 0 0;
+  font-size: 24px; /* Slightly smaller than before for balance */
+  line-height: 1.6; /* Better spacing for text */
+}
+
+.timeline-date {
+  margin-top: 20px;
+  /* font-size: 18px; Slightly smaller date */
+  color: #e4f0ec; /* Lighter eucalyptus for the date */
+  font-style: italic; /* Adds a touch of elegance */
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    height: 100%;
+    display: grid;
+  }
+  .timeline-content h2 {
+    font-size: 36px;
+  }
+  .timeline-content p {
+    font-size: 12px;
+  }
+  .timeline-date {
+    font-size: 12px;
+  }
+}
+
+/* Media Query for Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .timeline-item {
+    display: grid;
+  }
+  .timeline-content h2 {
+    font-size: 36px;
+  }
+  .timeline-content p {
+    font-size: 12px;
+  }
+  .timeline-date {
+    font-size: 12px;
+  }
+}
+
+/* Picture Grid Section */
+.picture-grid {
+  overflow: hidden;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 1px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 1px;
+}
+
+.column img {
+  margin-top: 3px;
+  vertical-align: middle;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Bridal party */
+.section-title {
+  text-align: center;
+  font-size: 3.5rem; /* Eucalyptus Green */
+  margin: 2rem 0;
+  letter-spacing: 1px;
+}
+
+.section-title.girls {
+  font-family: 'Ephesis', serif;
+  margin-bottom: 15px;
+}
+/*
+.section-title.guys {
+  font-family: "Nothing You Could Do", serif;
+} */
+
+.groomsmen {
+  background-color: #7A9A6F;
+}
+
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);  /* Start from off-screen (left) */
+      opacity: 0;                    /* Start invisible */
+  }
+  100% {
+      transform: translateX(0);      /* Move to the normal position */
+      opacity: 1;                    /* Fade in to full visibility */
+  }
+}
+
+.section-title.guys {
+  font-family: "Nothing You Could Do", serif;
+  opacity: 0;                    /* Initially invisible */
+  animation: none;               /* No animation by default */
+  padding: 15px;
+}
+
+/* When the element comes into view, apply the animation */
+.section-title.girls.visible {
+  animation: slideInLeft 1s ease-out forwards; /* Apply the animation */
+}
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100%);  /* Start from off-screen (right) */
+      opacity: 0;                   /* Start invisible */
+  }
+  100% {
+      transform: translateX(0);     /* Move to the normal position */
+      opacity: 1;                   /* Fade in to full visibility */
+  }
+}
+
+.section-title.girls {
+  font-family: 'Ephesis', serif;
+  opacity: 0;
+  animation: none;
+}
+
+.section-title.guys.visible {
+  animation: slideInRight 1s ease-out forwards; /* Apply the animation */
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  gap: 20px;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center; /* Ensure text is centered in the .info section */
+}
+
+
+/* Round Image Styling */
+.grid-item img {
+  width: 150px;  /* Adjust the size of the round image */
+  height: 150px; /* Keep width and height the same for a perfect circle */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover;  /* Ensure the image covers the circular area */
+  border-bottom: 3px solid #4c9a2a; /* Optional: Border for the image */
+  transition: opacity 0.3s ease;
+}
+
+/* Info Section */
+.info {
+  padding: 1rem;  /* Add some padding for the text */
+  background-color: transparent;  /* Remove background */
+}
+
+.info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  font-family: 'Ephesis', serif;
+}
+
+.info.guys h3 {
+  font-family: "Nothing You Could Do", serif;
+}
+
+.info.guys p {
+  color: #333;
+}
+
+.info p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: auto;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+/* Hotel Section */
+.hotel-content {
+  flex: 1;
+  height: 100%;
+  background-color: #e4f0ec; /* Dark eucalyptus green */
+  color: #5e8574; /* White text for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+
+.hotel-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  scroll-snap-align: start;
+}
+/* #hotel .timeline-content h2 {
+  color: #5e8574;
+} */
+
+.hotel-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hotel-section-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  max-width: 575px;
+}
+
+/* Table Styles */
+.hotel-details table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse; /* Remove borders between table elements */
+}
+
+.hotel-details th {
+  text-align: left;
+  font-weight: bold;
+  padding: 10px 15px;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.hotel-details td {
+  text-align: left;
+  padding: 10px 15px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hotel-details table {
+      width: 100%; /* Ensure table fits smaller screens */
+  }
+
+  .section-title {
+      font-size: 1.5em; /* Adjust title size for smaller screens */
+  }
+
+  .hotel-details th,
+  .hotel-details td {
+      padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+  .hotel-item {
+    display: grid;
+    height: 100%;
+  }
+}
+
+
+
+/*FAQs section*/
+.faq {
+  background-color: #5e8574; /* Soft eucalyptus background */
+  padding: 30px;
+}
+
+
+.faq h1 {
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'Brush Script MT', cursive;
+  margin-bottom: 30px;
+  color: #2f5543; /* Darker eucalyptus for the title */
+}
+
+.faq-item {
+  border-bottom: 1px solid #ffffff; /* Light eucalyptus border */
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  /* flex-direction: column; */
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 1em;
+  color: #2f5543; /* Dark eucalyptus green for the questions */
+  margin-bottom: 10px; /* Space between question and answer */
+}
+
+.faq-toggle {
+  font-size: 1em;
+  color: #5e8574; /* Light eucalyptus green for toggle icon */
+}
+
+/* Answer initially hidden */
+.faq-answer {
+  display: none;
+  font-size: 1.1em;
+  color: #555; /* Light grey text for the answer */
+  line-height: 1.6;
+}
+
+.faq-item.active {
+  display: block;
+}
+
+/* Show answer when clicked */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(180deg); /* Rotate the toggle icon on active state */
+}
+
+/* Hover effect for questions */
+.faq-item:hover .faq-question {
+  color: #5e8574; /* Change question color on hover */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .faq-question {
+    font-size: 1.1em;
+  }
+
+  .faq-answer {
+    font-size: 1em;
+  }
+}
+
+/* Section styling */
+#rsvp {
+  background-color: #e4f0ec; /* Soft eucalyptus background */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5em;
+  color: #2f5543; /* Dark eucalyptus green */
+  margin-bottom: 0px;
+}
+
+.rsvp-by {
+  color: #2f5543;
+  font-style: italic;
+}
+
+/* Form styling */
+.rsvp-form {
+  margin: 0 auto;
+  background-color: #ffffff; /* White background for the form */
+  border: 2px solid #5e8574; /* Eucalyptus border */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+label {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2f5543; /* Dark eucalyptus */
+  white-space: nowrap;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #5e8574; /* Highlighted eucalyptus border */
+  box-shadow: 0 0 5px rgba(94, 133, 116, 0.5);
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.rsvp-btn {
+  background-color: #5e8574; /* Eucalyptus green */
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-btn:hover {
+  background-color: #2f5543; /* Darker eucalyptus */
+}
+
+.guest-form {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .rsvp-form {
+    padding: 15px;
+  }
+
+  .guest-form {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvp-form {
+    padding: 15px;
+  }
+
+  .guest-form {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .guest-form {
+    display: block;
+  }
+}
+
+.login-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.login-title {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5em;
+  color: #2f5543; /* Dark eucalyptus green */
+  text-align: center;
+  margin-bottom: 20px;
+}
+.btn-custom {
+  background-color: #5e8574; /* Eucalyptus green */
+  color: white;
+}
+.btn-custom:hover {
+  background-color: #2f5543; /* Darker eucalyptus green */
+}
+
+.message-container {
+  margin-top: 20px;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

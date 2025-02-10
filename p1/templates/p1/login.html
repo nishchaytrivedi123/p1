@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<!-- <link rel="stylesheet" href="{% static 'p1/css/bootstrap.css' %}"> -->
+	<!-- <link rel="stylesheet" href="{% static 'p1/css/bootstrap.min.css' %}"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'p1/bootstrap-5.0.0/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/fontawesome/css/all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/owl.theme.default.min.css' %}">
+	<!-- <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" /> -->
+	<link rel="icon"
+      type="image/png"
+      href="{% static 'p1/photos/Logo - 3.png' %}">
+    <title>
+    	Emily & Nishchay
+    </title>
+    <style>
+        body {
+            background-color: #e4f0ec; /* Eucalyptus theme background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+	</style>
+
+</head>
+
+<body>
+    <div class="login-container">
+        <h2 class="login-title">Welcome Back</h2>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<!-- <link rel="stylesheet" href="{% static 'p1/css/bootstrap.css' %}"> -->
+	<!-- <link rel="stylesheet" href="{% static 'p1/css/bootstrap.min.css' %}"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'p1/bootstrap-5.0.0/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/fontawesome/css/all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'p1/css/owl.theme.default.min.css' %}">
+	<!-- <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" /> -->
+	<link rel="icon"
+      type="image/png"
+      href="{% static 'p1/photos/Logo - 3.png' %}">
+    <title>
+    	Emily & Nishchay
+    </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="align-items: center; justify-content: center;">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="#events">Events</a>
+					<a class="nav-item nav-link" href="#accommodations">Accommodations</a>
+					<a class="nav-item nav-link" href="#faqs">FAQs</a>
+					<a class="nav-item nav-link" href="#rsvp">RSVP</a>
+					{% if guest.first_name == 'Nishchay' %}
+					<a class="nav-item nav-link" href="{% url 'create_family_and_guest' %}" target="_blank">Sign-up</a>
+					{% endif %}
+					{% if guest.first_name == 'Nishchay' %}
+					<a class="nav-item nav-link" href="{% url 'view_guests' %}" target="_blank">View guests</a>
+					{% endif %}
+				</div>
+				{% if user is not None and user.is_authenticated %}
+				<div class="ms-auto">
+					<span class="nav-item nav-link">Welcome, {{ user.first_name }}!</span>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</nav>
+
+	<div class="image-container">
+		<img id="profile-bg" src="{% static 'p1/photos/IMG_7945_copy1.JPG' %}">
+		<div class="text-overlay">
+			<h1 class="text-line">Emily & Nishchay</h1>
+			<h4 class="text-line">18 / 07/ 2025</h4>
+		</div>
+	</div>
+
+	<div id="countdown-container">
+		<div style="display: flex;">
+			<div id="countdown-text">
+				<p id="title">DAYS UNTIL</p>
+				<h4 id="wedding">Our Wedding</h4>
+			</div>
+			<div id="champagne">
+				<img src="{% static 'p1/photos/champagne_new.png' %}">
+			</div>
+		</div>
+		<div id="countdown">
+			<div id="timer">
+				<div class="time-block">
+					<span id="days"></span>
+					<span class="label">Days</span>
+				</div>
+				<div class="time-block">
+					<span id="hours"></span>
+					<span class="label">Hours</span>
+				</div>
+				<div class="time-block">
+					<span id="minutes"></span>
+					<span class="label">Minutes</span>
+				</div>
+				<div class="time-block">
+					<span id="seconds"></span>
+					<span class="label">Seconds</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline" id="events">
+        <div class="timeline-item">
+            <div class="timeline-image">
+                <img src="{% static 'p1/photos/church.jpg' %}" alt="Event 1 Image">
+				<div class="overlay">
+                    <a href="https://g.co/kgs/TNAj25L" target="_blank">View on Map</a>
+                </div>
+            </div>
+            <div class="timeline-content">
+                <h2>Our ceremony</h2>
+				<span class="timeline-date">July 18th, 2025 @3:00PM. Doors open at 2:30PM</span>
+				<p>The day begins with our wedding ceremony at Pitt Meadows United Church or "The Little White Church". The heritage site was built in 1910 and has been
+					serving the community faithfully since then. Though the church is over a century old, we love the coming together of old and new traditions just as we are blending
+					our own cultures and traditions.
+				</u> </p>
+				<p>------</p>
+                <p>"Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up"</p>
+				<p>-Ecclesiastes 4:9-10</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-image">
+                <img src="{% static 'p1/photos/SwanesetWeddings-Grounds-30.jpg' %}" alt="Event 2 Image">
+				<div class="overlay">
+                    <a href="https://g.co/kgs/khxoZTW" target="_blank">View on Map</a>
+                </div>
+            </div>
+            <div class="timeline-content">
+                <h2>Reception</h2>
+				<span class="timeline-date">Cocktail hour @4:30PM</span>
+                <p>Take the fifteen minute scenic drive to our next location at Swaneset golf course where there will be music, appetizers and drinks before dinner.     </p>
+				<p>------</p>
+				<span class="timeline-date">Dinner @6:30PM</span>
+				<p>The buffet dinner begins! We hope you enjoy the food, speeches and quality time.</p>
+				<p>------</p>
+				<span class="timeline-date">Dance party @8:30PM</span>
+				<p>Let's see you bust a move!!!!</p>
+			</div>
+        </div>
+        <!-- <div class="timeline-item">
+            <div class="timeline-image">
+                <img src="{% static 'p1/photos/GrandBallroom-7.jpg' %}" alt="Event 3 Image">
+				<div class="overlay">
+                    <a href="https://g.co/kgs/khxoZTW" target="_blank">View on Map</a>
+                </div>
+            </div>
+            <div class="timeline-content">
+                <h2>Dinner</h2>
+                <p>The buffet dinner begins! We hope you enjoy the food, speeches, games and quality time.</p>
+                <span class="timeline-date">2024-03-30</span>
+            </div>
+        </div> -->
+    </div>
+
+	<section class="picture-grid">
+		<div class="row">
+			<div class="column">
+			  <img src="{% static 'p1/photos/IMG03285-copy.jpg' %}" style="width:100%; height: 35%;">
+			  <img src="{% static 'p1/photos/IMG03365.jpg' %}" style="width:100%; height: 65%">
+			</div>
+			<div class="column">
+				<img src="{% static 'p1/photos/IMG03303.jpg' %}" style="width:100%; height: 65%">
+				<img src="{% static 'p1/photos/IMG_7598.jpg' %}" style="width:100%; height: 35%">
+			  </div>
+			<div class="column">
+			  <img src="{% static 'p1/photos/IMG03419_copy.jpg' %}" style="width:100%; height: 35%">
+			  <img src="{% static 'p1/photos/IMG03318.jpg' %}" style="width:100%; height: 65%">
+			</div>
+			<div class="column">
+				<img src="{% static 'p1/photos/IMG03491.jpg' %}" style="width:100%; height: 65%">
+				<img src="{% static 'p1/photos/IMG03462_copy.jpg' %}" style="width:100%; height: 35%">
+			</div>
+		</div>
+	</section>
+
+	<!-- Bridal party Section -->
+	<section class="bridal-party">
+        <h2 class="section-title girls">The Girls</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/amanda-3.jpeg' %}" alt="Bridal Party Member 1">
+                <div class="info">
+                    <h3>Amanda Whyte</h3>
+                    <p>Maid of honor</p>
+                    <p>Bride's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/michelle-1.jpeg' %}" alt="Bridal Party Member 2">
+                <div class="info">
+                    <h3>Michelle Lao</h3>
+                    <p>Bridesmaid</p>
+                    <p>Bride's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/holly.jpeg' %}" alt="Bridal Party Member 3">
+                <div class="info">
+                    <h3>Holly Rae</h3>
+                    <p>Bridesmaid</p>
+                    <p>Bride's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/maggie.jpeg' %}" alt="Bridal Party Member 4">
+                <div class="info">
+                    <h3>Maggie Ng</h3>
+                    <p>Bridesmaid</p>
+                    <p>Bride's cousin</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/alexa.jpg' %}" alt="Bridal Party Member 5">
+                <div class="info">
+                    <h3>Alexa Toffolon</h3>
+                    <p>Bridesmaid</p>
+                    <p>Bride's sister-in-law</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Groomsmen Section -->
+    <section class="groomsmen">
+        <h2 class="section-title guys">The guys</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/dhulo.jpg' %}" alt="Groomsman 1">
+                <div class="info guys">
+                    <h3>Dhruv Patel</h3>
+                    <p>Best Man</p>
+                    <p>Groom's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/umang.jpeg' %}" alt="Groomsman 2">
+                <div class="info guys">
+                    <h3>Umang Mehta</h3>
+                    <p>Groomsman</p>
+                    <p>Groom's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/harsh.jpg' %}" alt="Groomsman 3">
+                <div class="info guys">
+                    <h3>Harsh Vaghela</h3>
+                    <p>Groomsman</p>
+                    <p>Groom's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/shiv.jpg' %}" alt="Groomsman 4">
+                <div class="info guys">
+                    <h3>Shiv Hansoti</h3>
+                    <p>Groomsman</p>
+                    <p>Groom's best friend</p>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="{% static 'p1/photos/mark.jpg' %}" alt="Groomsman 5">
+                <div class="info guys">
+                    <h3>Mark Villanueva</h3>
+                    <p>Groomsman</p>
+                    <p>Groom's brother-in-law</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Hotel Recommendations Section -->
+	<section class="timeline" id="hotel">
+        <div class="hotel-item">
+			<div class="hotel-content">
+				<h2 class="hotel-section-title">Recommended Hotel</h2>
+				<div class="hotel-details">
+					<table>
+						<tr>
+							<th>Where:</th>
+							<td>Best Western Plus Pitt Meadows Inn & Suites</td>
+						</tr>
+						<tr>
+							<th>Address:</th>
+							<td>19267 Lougheed Hwy, Pitt Meadows, BC</td>
+						</tr>
+						<tr>
+							<th>Contact:</th>
+							<td>(604) 460-9859</td>
+						</tr>
+						<tr>
+							<th>When:</th>
+							<td>Thursday, July 17
+								</br>
+								Saturday, July 19
+							</td>
+						</tr>
+						<tr>
+							<th>Details:</th>
+							<td>We have a room block reserved under “Villanueva-Trivedi wedding”. Booking your room is simple, just call the contact number to receive our group’s rate.
+							</br>
+							Check-in is at 4pm. Please book the hotel by June 18, 2025 if you're planning to stay here.
+							</td>
+						</tr>
+						<tr>
+							<th>Room Price:</th>
+							<td>Starting at $219 per night</td>
+						</tr>
+						<tr>
+							<th>Amenities:</th>
+							<td>Breakfast included with free Wi-Fi, Parking, Pool, Gym, Spa</td>
+						</tr>
+					</table>
+				</div>
+            </div>
+            <div class="timeline-image">
+                <img src="{% static 'p1/photos/14291526.jpg' %}" alt="Event 1 Image">
+				<div class="overlay">
+                    <a href="https://g.co/kgs/jQv679H" target="_blank">View on Map</a>
+                </div>
+            </div>
+        </div>
+	</section>
+
+	<!-- FAQs Section -->
+	<section class="faq" id="faqs">
+		<div class="container" style="background-color: #e4f0ec; overflow-y: auto; max-height: 500px;">
+			<h1>Frequently Asked Questions</h1>
+			<div class="faq-item">
+				<div class="faq-question">WHAT DATE SHOULD I RSVP BY?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					<p>Please RSVP by March 31st, 2025.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">WHERE SHOULD I STAY?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					We recommend staying at the Best Western Pitt Meadows for convenience. Other nearby options include hotels in Maple Ridge or Langley or airbnbs.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">HOW DO I GET THERE? WILL THERE BE PARKING?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					There is a small parking lot at the church as well as street parking available. Swaneset has a large parking lot with free overnight parking. Unfortunately, these venues are not as accessible via transit. However, both rideshare services and taxis are available.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">WHAT TIME SHOULD I ARRIVE?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					Please arrive at least 30 minutes before the ceremony begins.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">WHAT SHOULD I WEAR?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					Formal attire is requested. Think elegant and comfortable.
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">WHICH TYPES OF GIFTS ARE WELCOME?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					While your presence is the greatest gift to us, if you would like to give a gift, we would be grateful for a contribution in cash. Thank you so much for your kindness and support!
+				</div>
+			</div>
+			<div class="faq-item">
+				<div class="faq-question">CAN I BRING A GUEST?</div>
+				<div class="faq-toggle">&#9662;</div>
+				<div class="faq-answer">
+					We will only be able to accommodate those listed on your invitation. When you RSVP on this website, you will see all of the names of your party.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="rsvp" style="background-color: #e4f0ec; padding: 50px 0;">
+		<div class="container">
+		  <h2 class="section-title">RSVP</h2>
+		  <p class="rsvp-by">Please RSVP by March 31st, 2025</p>
+		  <form class="rsvp-form" method="POST">
+			<!-- {% for g in guests %}
+			<div style="display: flex;">
+				<div class="form-group">
+					<label for="first-name">First name</label>
+					<input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required value="{{ g.first_name|default:'' }}">
+				</div>
+				<div class="form-group">
+					<label for="last-name">Last name</label>
+					<input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required value="{{ g.last_name|default:'' }}">
+				</div>
+				<div class="form-group">
+					<label for="attendance">Will you be attending?</label>
+					<select class="selectpicker" id="attendance" name="attendance" required>
+						<option value="">-- Select an option --</option>
+						<option value="yes" {% if g.is_rsvped %}{% if g.rsvp_status %}selected{% endif %}{% endif %}>Yes, I will be there</option>
+						<option value="no" {% if g.is_rsvped %}{% if not g.rsvp_status %}selected{% endif %}{% endif %}>Sorry, I can't make it</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="meal-preference">Dietary restriction</label>
+					<input type="text" id="meal-preference" name="meal-preference" placeholder="Dietary restriction" value="{{ g.dietary_restrictions|default:''}}">
+				</div>
+			</div>
+			{% endfor %} -->
+			{% csrf_token %}
+			{% for g in guests %}
+				<div class="guest-form" id="guest-{{ g.id }}">
+				<div class="form-group">
+					<label for="first-name-{{ g.id }}">First name</label>
+					<input type="text" id="first-name-{{ g.id }}" pattern="^[^\s]+$" title="Spaces are not allowed in the first name" name="first-name-{{ g.id }}" placeholder="Enter your first name" required value="{{ g.first_name|default:'' }}">
+				</div>
+				<div class="form-group">
+					<label for="last-name-{{ g.id }}">Last name</label>
+					<input type="text" id="last-name-{{ g.id }}" pattern="^[^\s]+$" title="Spaces are not allowed in the first name" name="last-name-{{ g.id }}" placeholder="Enter your last name" required value="{{ g.last_name|default:'' }}">
+				</div>
+				<div class="form-group">
+					<label for="attendance-{{ g.id }}">Will you be attending?</label>
+					<select class="selectpicker" id="attendance-{{ g.id }}" name="attendance-{{ g.id }}" required>
+					<option value="">-- Select an option --</option>
+					<option value="yes" {% if g.is_rsvped %}{% if g.rsvp_status %}selected{% endif %}{% endif %}>Yes, I will be there</option>
+					<option value="no" {% if g.is_rsvped %}{% if not g.rsvp_status %}selected{% endif %}{% endif %}>Sorry, I can't make it</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="meal-preference-{{ g.id }}">Dietary restrictions</label>
+					<input type="text" id="meal-preference-{{ g.id }}" name="meal-preference-{{ g.id }}" placeholder="Dietary restrictions" value="{{ g.dietary_restrictions|default:'' }}">
+				</div>
+				<div class="form-group">
+					<label for="hotel-{{ g.id }}">Are you staying at recommended hotel?</label>
+					<select class="selectpicker" id="hotel-{{ g.id }}" name="hotel-{{ g.id }}" required>
+					<option value="">-- Select an option --</option>
+					<option value="yes" {% if g.is_rsvped %}{% if g.staying_at_hotel %}selected{% endif %}{% endif %}>Yes, I am</option>
+					<option value="no" {% if g.is_rsvped %}{% if not g.staying_at_hotel %}selected{% endif %}{% endif %}>No, I am not</option>
+					</select>
+				</div>
+				</div>
+			{% endfor %}
+			<div class="form-group">
+				<label for="message">Message (optional)</label>
+				<textarea id="message" name="message" placeholder="Leave a message for the happy couple!"></textarea>
+			</div>
+			<input type="hidden" id="guest-id" name="id" value="{{ guest.id }}">
+			<button type="submit" class="rsvp-btn">Submit RSVP</button>
+			<!-- Add these placeholders for success and error messages -->
+			<div id="message-container" class="message-container">
+				<div id="success-message" class="message success-message" style="display:none;"></div>
+				<div id="error-message" class="message error-message" style="display:none;"></div>
+			</div>
+		  </form>
+		</div>
+	</section>
+</body>
+
+
+</html>
+
+
+<!-- <script type="text/javascript" src="{% static 'p1/js/jquery-3.5.1.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'p1/js/jquery-3.5.1.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'p1/js/bootstrap.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'p1/js/bootstrap.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'p1/typed.js-master/src/typed.js' %}"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script type="text/javascript" src="{% static 'p1/js/owl.carousel.min.js' %}"></script>
+
+
+<!-- D:\portfolios\p1\p1\static\p1\typed.js-master\src -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('.navbar-toggler').click(function() {
+      // Toggle the 'active' class to change background color
+      $('.navbar').toggleClass('active');
+    });
+  });
+
+// Set the date we're counting down to
+const countdownDate = new Date("July 18, 2025 13:00:00").getTime();
+
+// Update the countdown every 1 second
+const x = setInterval(function() {
+
+// Get today's date and time
+const now = new Date().getTime();
+
+// Calculate the remaining time
+const distance = countdownDate - now;
+
+// Time calculations for days, hours, minutes, and seconds
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// Display the result in the elements
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
+
+// If the countdown is over, display a message
+if (distance < 0) {
+	clearInterval(x);
+	document.getElementById("timer").innerText = "EXPIRED";
+}
+}, 1000);
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', function() {
+    // Toggle the clicked FAQ item (open/close)
+    this.classList.toggle('active');
+
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-item').forEach(faq => {
+      // If the clicked item is not the one being processed, remove the active class
+      if (faq !== this) {
+        faq.classList.remove('active');
+      }
+    });
+  });
+});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const div = document.querySelector('.text-overlay');
+//     div.classList.add('visible');
+// });
+
+const slideInText = document.querySelector('.section-title.guys');
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add 'visible' class to trigger the slide-in effect
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);  // Stop observing once it comes into view
+        }
+    });
+}, { threshold: 0.5 });  // Trigger when 50% of the element is in view
+
+// Start observing the h3 element
+observer.observe(slideInText);
+
+const slideOutText = document.querySelector('.section-title.girls');
+
+// Create an IntersectionObserver to detect when the text enters the viewport
+const observerRight = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add 'visible' class to trigger the animation
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);  // Stop observing once it comes into view
+        }
+    });
+}, { threshold: 0.5 });  // Trigger when 50% of the element is in view
+
+// Start observing the h3 element
+observerRight.observe(slideOutText);
+
+$(document).ready(function() {
+  // On form submit
+  $('.rsvp-form').on('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    var formData = [];
+
+    // Loop through each guest form and collect data
+    $('.guest-form').each(function() {
+      var guestId = $(this).attr('id').split('-')[1]; // Get guest ID from the id attribute of the form
+
+      var guestData = {
+        'first_name': $('#first-name-' + guestId).val(),
+        'last_name': $('#last-name-' + guestId).val(),
+        'rsvp_status': $('#attendance-' + guestId).val(),
+        'dietary_restrictions': $('#meal-preference-' + guestId).val(),
+		'staying_at_hotel': $('#hotel-' + guestId).val(),
+		'message': $('message').val(),
+        'guest_id': guestId, // Use guest's ID to identify which guest is being updated
+        'is_rsvped': true
+        // 'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val() // CSRF token for security
+      };
+
+      formData.push(guestData); // Add guest data to the formData array
+    });
+
+
+    // Make AJAX request
+    $.ajax({
+      url: '/update-rsvp/',  // Your Django URL for handling the form submission
+      type: 'POST',
+      data: {
+        'form_data': JSON.stringify(formData),  // Convert the formData array to a JSON string
+		'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val()
+      },
+      success: function(response) {
+        // Show success message
+        $('#success-message').text('RSVP updated successfully!').show();
+        $('#error-message').hide(); // Hide error message if the operation was successful
+
+        // Loop over the guests and update the form fields with the new data
+        response.updated_guests.forEach(function(updatedGuest) {
+          // Update the first name and last name
+          $('#first-name-' + updatedGuest.id).val(updatedGuest.first_name);
+          $('#last-name-' + updatedGuest.id).val(updatedGuest.last_name);
+
+          // Update the RSVP status dropdown
+          $('#attendance-' + updatedGuest.id).val(updatedGuest.rsvp_status ? 'yes' : 'no');
+
+          // Update dietary restrictions
+          $('#meal-preference-' + updatedGuest.id).val(updatedGuest.dietary_restrictions);
+        });
+
+        // Optionally, clear the form or display a success message
+        // $('.rsvp-form')[0].reset();
+      },
+      error: function(xhr, status, error) {
+        // Show error message
+        $('#error-message').text('Something went wrong. Please try again.').show();
+        $('#success-message').hide(); // Hide success message if there's an error
+      }
+    });
+  });
+});
+
+
+</script>
