@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dznqjj89q^z_n4s#&(x$-k-6z^lym!2_snik#g#@85&20#ag_r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["emnishwedding.netlify.app"]
-
+ALLOWED_HOSTS = []
+# 2355995
 
 # Application definition
 

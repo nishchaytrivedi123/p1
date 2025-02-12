@@ -63,6 +63,8 @@ def update_rsvp(request):
             guest = WeddingGuest.objects.get(id=guest_data['guest_id'])
             guest.rsvp_status = guest_data['rsvp_status'] == 'yes'
             guest.dietary_restrictions = None
+            guest.first_name = guest_data['first_name']
+            guest.last_name = guest_data['last_name']
             if 'dietary_restrictions' in guest_data and guest_data['dietary_restrictions']:
                 guest.dietary_restrictions = guest_data['dietary_restrictions']
 

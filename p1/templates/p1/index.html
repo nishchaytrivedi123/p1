@@ -35,10 +35,10 @@
 					<a class="nav-item nav-link" href="#accommodations">Accommodations</a>
 					<a class="nav-item nav-link" href="#faqs">FAQs</a>
 					<a class="nav-item nav-link" href="#rsvp">RSVP</a>
-					{% if guest.first_name == 'Nishchay' %}
+					{% if guest.first_name == 'Nishchay' and guest.last_name == 'Emnish@2021' %}
 					<a class="nav-item nav-link" href="{% url 'create_family_and_guest' %}" target="_blank">Sign-up</a>
 					{% endif %}
-					{% if guest.first_name == 'Nishchay' %}
+					{% if guest.first_name == 'Nishchay' and guest.last_name == 'Emnish@2021' %}
 					<a class="nav-item nav-link" href="{% url 'view_guests' %}" target="_blank">View guests</a>
 					{% endif %}
 				</div>
@@ -130,19 +130,6 @@
 				<p>Let's see you bust a move!!!!</p>
 			</div>
         </div>
-        <!-- <div class="timeline-item">
-            <div class="timeline-image">
-                <img src="{% static 'p1/photos/GrandBallroom-7.jpg' %}" alt="Event 3 Image">
-				<div class="overlay">
-                    <a href="https://g.co/kgs/khxoZTW" target="_blank">View on Map</a>
-                </div>
-            </div>
-            <div class="timeline-content">
-                <h2>Dinner</h2>
-                <p>The buffet dinner begins! We hope you enjoy the food, speeches, games and quality time.</p>
-                <span class="timeline-date">2024-03-30</span>
-            </div>
-        </div> -->
     </div>
 
 	<section class="picture-grid">
@@ -382,30 +369,6 @@
 		  <h2 class="section-title">RSVP</h2>
 		  <p class="rsvp-by">Please RSVP by March 31st, 2025</p>
 		  <form class="rsvp-form" method="POST">
-			<!-- {% for g in guests %}
-			<div style="display: flex;">
-				<div class="form-group">
-					<label for="first-name">First name</label>
-					<input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required value="{{ g.first_name|default:'' }}">
-				</div>
-				<div class="form-group">
-					<label for="last-name">Last name</label>
-					<input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required value="{{ g.last_name|default:'' }}">
-				</div>
-				<div class="form-group">
-					<label for="attendance">Will you be attending?</label>
-					<select class="selectpicker" id="attendance" name="attendance" required>
-						<option value="">-- Select an option --</option>
-						<option value="yes" {% if g.is_rsvped %}{% if g.rsvp_status %}selected{% endif %}{% endif %}>Yes, I will be there</option>
-						<option value="no" {% if g.is_rsvped %}{% if not g.rsvp_status %}selected{% endif %}{% endif %}>Sorry, I can't make it</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="meal-preference">Dietary restriction</label>
-					<input type="text" id="meal-preference" name="meal-preference" placeholder="Dietary restriction" value="{{ g.dietary_restrictions|default:''}}">
-				</div>
-			</div>
-			{% endfor %} -->
 			{% csrf_token %}
 			{% for g in guests %}
 				<div class="guest-form" id="guest-{{ g.id }}">
@@ -441,7 +404,7 @@
 			{% endfor %}
 			<div class="form-group">
 				<label for="message">Message (optional)</label>
-				<textarea id="message" name="message" placeholder="Leave a message for the happy couple!"></textarea>
+				<textarea id="message" name="message" placeholder="Leave a message for the happy couple! Or you can also mention your favorite music playlist"></textarea>
 			</div>
 			<input type="hidden" id="guest-id" name="id" value="{{ guest.id }}">
 			<button type="submit" class="rsvp-btn">Submit RSVP</button>
