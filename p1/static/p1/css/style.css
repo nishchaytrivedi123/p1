@@ -933,3 +933,39 @@ textarea {
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
+
+
+/* Footer Styling */
+.footer {
+  background-color: #5e8574;  /* Light background color */
+  color: #fff;                 /* Dark text color */
+  text-align: center;          /* Center-align text and logo */
+  padding: 30px 20px;          /* Padding around the footer */
+}
+
+.footer-content {         /* Limit the width */
+  margin: 0 auto;              /* Center align content */
+}
+
+.footer p {
+  margin: 0;                   /* Remove margin */
+  line-height: 1.5;            /* Space out the lines */
+}
+
+.heart {
+  color: red;                  /* Heart color */
+}
+
+.footer-logo {
+  max-width: 300px;            /* Limit the logo size */
+  opacity: 0.8;                /* Slightly fade the logo */
+  transition: opacity 0.3s;    /* Smooth fade effect on hover */
+}
+
+.footer-logo:hover {
+  opacity: 1;                  /* Increase opacity on hover */
+}
+
+.footer .copyright {
+  font-size: 10px;             /* Smaller text for copyright */
+}

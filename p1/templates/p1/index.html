@@ -416,6 +416,14 @@
 		  </form>
 		</div>
 	</section>
+
+	<!-- Footer Section -->
+	<footer class="footer">
+		<div class="footer-content">
+			<img src="{% static 'p1/photos/Logo_-_3-removebg-preview.png' %}" alt="Logo" class="footer-logo">
+			<p>Made with <span class="heart">❤️</span> by <span class="author-name">Emnish</span> © <span id="year"> </span></p>
+		</div>
+	</footer>
 </body>
 
 
@@ -435,6 +443,8 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
 
 <script type="text/javascript">
+
+document.getElementById('year').textContent = new Date().getFullYear();
 
 $(document).ready(function(){
     $('.navbar-toggler').click(function() {
